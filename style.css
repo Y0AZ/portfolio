@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(to right, #f4f6f9, #eef1f6);
+    color: #333;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+  --header-height: 60px;
+}
+
+li#portfolio a{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color : brown;
+}
+
+section {
+    height: 75vh;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: darkgray;
+    border-radius: 12px;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+section:hover {
+    transition: transform 1s ease, box-shadow 1s ease;
+    box-shadow:10px 10px 25px rgba(73, 163, 31, 0.659);
+    transform: scale(1.02);
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #1d3557;
+    border-bottom: 2px solid #4CAF50;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    overflow-y: auto;
+}
+
+.project, .education{
+    color: whitesmoke;
+    background: #7f7d7d;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-left: 5px solid #4CAF50;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.marge{
+    border-right: 10px solid darkgrey;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #24292e;
+    color: #fff;
+    text-align: center;
+    padding: 0.2rem;
+    z-index: 1000;
+    font-size: 0.8rem;
+}
+
+.profile{
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction:row;
+    gap: 1rem;
+    align-items:center;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.navbar {
+    height: var(--header-height);
+    top: 0;
+    width: 100%;
+    background-color: #1d3557;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.list{
+    overflow-x: auto; 
+    white-space: nowrap; 
+    max-width: 75%;
+}
+
+.list li{
+    display:inline;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #f4f4f4;
+    text-decoration: underline;
+}
+
+.clickable-img {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+  
+.clickable-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(230, 246, 210, 0.75);
+    border-radius: 12px;
+    background-color: rgb(118, 118, 118);
+}
+
+.swiper-slide {
+    background: #f1f1f1;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Centre les flèches verticalement */
+.swiper-button-prev,
+.swiper-button-next {
+    transform: translateY(-25%);
+}
+
+.intern {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(255, 255, 255, 0.367)), url("img/bgComputer.jpg") ;
+    background-size: cover;
+    color:aliceblue;
+    border-radius: 12px;
+}
+
+.relief:hover {
+    text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+    background-image: linear-gradient(rgba(144, 20, 20, 0.7), rgba(255,255,255,0.4));
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.h5{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.font{
+    background-color: rgba(204, 204, 204, 0.354);
+    border-radius: 12px;
+    max-height: 14vh;
+}
+
+/* Décalage du body pour que le contenu ne passe pas sous la navbar */
+
+@media (min-width: 768px) {
+  .card {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    background-color: darkgray;
+    color: #333;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .card img {
+    width: 220px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 10%;
+    margin-bottom: 1rem;
+  }
+}
