@@ -17,6 +17,36 @@ body {
     width: 100%;
 }
 
+/* Par défaut : le message est caché et le portfolio visible */
+#mobile-warning {
+  display: none;
+}
+
+#main-content {
+  display: block;
+}
+
+/* Pour les écrans de 1024px ou moins (tablettes, mobiles...) */
+@media (max-width: 1024px) {
+  #mobile-warning {
+    display:block;
+    text-align: center;
+    padding: 3rem;
+    font-family: 'Inter', sans-serif;
+    background: #1d3557;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #main-content {
+    display: none;
+  }
+}
+
 :root {
   --header-height: 60px;
 }
