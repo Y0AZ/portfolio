@@ -205,7 +205,7 @@ a {
 }
 
 .intern {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(255, 255, 255, 0.367)), url("img/bgComputer.jpg") ;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(37, 153, 99, 0.566)), url("img/bgComputer.jpg") ;
     background-size: cover;
     color:aliceblue;
     border-radius: 12px;
