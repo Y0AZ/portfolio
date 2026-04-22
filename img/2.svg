@@ -1,0 +1,11 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <text x="50%" y="35%" text-anchor="middle" font-size="18" fill="#777">
+    made by <tspan font-style="italic" font-weight="bold" fill="#000">YOAZ</tspan>
+  </text>
+
+  <line x1="100" y1="90" x2="300" y2="90" stroke="#ccc" stroke-width="1"/>
+
+  <text x="50%" y="70%" text-anchor="middle" font-size="34" font-family="serif" fill="#111">
+    portfolio
+  </text>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <circle cx="256" cy="256" r="256" fill="#3D1A26"/>
+  <ellipse cx="256" cy="256" rx="210" ry="210" fill="none" stroke="#D4537E" stroke-width="4" opacity="0.3"/>
+  <ellipse cx="256" cy="256" rx="168" ry="108" fill="none" stroke="#993556" stroke-width="4" opacity="0.45" transform="rotate(45 256 256)"/>
+  <ellipse cx="256" cy="256" rx="168" ry="108" fill="none" stroke="#BA7517" stroke-width="4" opacity="0.45" transform="rotate(-45 256 256)"/>
+  <ellipse cx="256" cy="256" rx="168" ry="108" fill="none" stroke="#EF9F27" stroke-width="4" opacity="0.3" transform="rotate(0 256 256)"/>
+  <path d="M256 122 L269 242 L384 256 L269 270 L256 390 L243 270 L128 256 L243 242 Z" fill="#FAC775" opacity="0.12"/>
+  <text x="256" y="293" text-anchor="middle"
+    font-family="Georgia, serif" font-size="100" font-weight="700"
+    letter-spacing="8" fill="#FAC775">YOAZ</text>
+  <circle cx="256" cy="330" r="10" fill="#D4537E"/>
+</svg>

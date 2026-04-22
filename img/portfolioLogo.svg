@@ -1,0 +1,39 @@
+<svg width="100%" viewBox="0 0 300 90" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Logo portfolio made by YOAZ</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Logo compact avec portfolio et made by YOAZ</desc>
+
+  <defs>
+    <linearGradient id="topbar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#BA7517"/>
+      <stop offset="33%" style="stop-color:#993556"/>
+      <stop offset="66%" style="stop-color:#534AB7"/>
+      <stop offset="100%" style="stop-color:#0F6E56"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="300" height="80" rx="10" fill="#D4C2A1" stroke="#c2ae8a" stroke-width="0.5" style="fill:rgb(212, 194, 161);stroke:rgb(194, 174, 138);color:rgb(255, 255, 255);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <rect x="0" y="0" width="300" height="3.5" rx="1.5" fill="url(#topbar)" style="stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- portfolio -->
+  <text x="150" y="38" text-anchor="middle" font-family="Impact, 'Arial Narrow', sans-serif" font-size="28" letter-spacing="6" fill="#2C2C2A" style="fill:rgb(44, 44, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Impact, &quot;Arial Narrow&quot;, sans-serif;font-size:28px;font-weight:400;text-anchor:middle;dominant-baseline:auto">portfolio</text>
+
+  <!-- tirets séparateurs -->
+  <text x="52" y="56" text-anchor="middle" font-size="10" fill="#BA7517" style="fill:rgb(186, 117, 23);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:10px;font-weight:400;text-anchor:middle;dominant-baseline:auto">—</text>
+  <text x="248" y="56" text-anchor="middle" font-size="10" fill="#0F6E56" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:10px;font-weight:400;text-anchor:middle;dominant-baseline:auto">—</text>
+
+  <!-- made by -->
+  <text x="118" y="57" text-anchor="middle" font-family="Georgia, serif" font-size="10" font-style="italic" fill="#5F5E5A" style="fill:rgb(95, 94, 90);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:10px;font-weight:400;font-style:italic;text-anchor:middle;dominant-baseline:auto">made by</text>
+
+  <!-- YOAZ lettres colorées -->
+  <text x="144" y="57" font-family="Georgia, serif" font-size="13" font-weight="900" fill="#BA7517" style="fill:rgb(186, 117, 23);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:13px;font-weight:900;text-anchor:start;dominant-baseline:auto">Y</text>
+  <text x="156" y="57" font-family="Georgia, serif" font-size="13" font-weight="900" fill="#993556" style="fill:rgb(153, 53, 86);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:13px;font-weight:900;text-anchor:start;dominant-baseline:auto">O</text>
+  <text x="170" y="57" font-family="Georgia, serif" font-size="13" font-weight="900" fill="#534AB7" style="fill:rgb(83, 74, 183);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:13px;font-weight:900;text-anchor:start;dominant-baseline:auto">A</text>
+  <text x="182" y="57" font-family="Georgia, serif" font-size="13" font-weight="900" fill="#0F6E56" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:13px;font-weight:900;text-anchor:start;dominant-baseline:auto">Z</text>
+
+  <!-- points décoratifs -->
+  <circle cx="149" cy="64" r="1.8" fill="#BA7517" style="fill:rgb(186, 117, 23);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="162" cy="64" r="1.8" fill="#993556" style="fill:rgb(153, 53, 86);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="175" cy="64" r="1.8" fill="#534AB7" style="fill:rgb(83, 74, 183);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="187" cy="64" r="1.8" fill="#0F6E56" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, &quot;system-ui&quot;, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+</svg>

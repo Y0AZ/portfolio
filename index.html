@@ -3,238 +3,211 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="img/portfolio.png">
-  <title>Portfolio - Aymeric Yapi</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous" defer></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-  <script src="script.js" defer></script>
+  <link rel="icon" type="image/svg+xml" href="img/yoaz_favicon.svg">  <title>Software Engineer Student</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="mobile-warning">
-    <h2>⚠️ Accès limité</h2>
-    <p>Veuillez consulter ce portfolio depuis un ordinateur pour une meilleure expérience.</p>
-  </div>
-  <div id="main-content">
-    <nav id="navbar-info" class="navbar bg-body-primary fixed-top">
-      <ul class="nav nav-pills">
-        <li id="portfolio" class="nav-item"><a class="nav-link">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#scrollspyHeading1">Profil</a></li>
-        <li class="nav-item"><a class="nav-link" href="#scrollspyHeading2">Expériences</a></li>
-        <li class="nav-item"><a class="nav-link" href="#scrollspyHeading3">Compétences</a></li>
-        <li class="nav-item"><a class="nav-link" href="#scrollspyHeading4">Formations</a></li>
-        <li class="nav-item"><a class="nav-link" href="#scrollspyHeading5">Contact</a></li>
-      </ul>
-    </nav>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-4 card">
-          <div class="text-center">
-            <img src="img/photo.jpg" class="img-fluid" alt="Photo d'Aymeric Yapi">
-            <h3>Aymeric YAPI</h3>
-            <p>
-              <a href="docs/CV_softwareEngineerStudent.pdf" download class="btn btn-success mt-2"> Télécharger mon CV </a>
-            </p>
-            <p class="text-muted"><span>"Apprendre, développer, tester, les maitres mots de ma motivation!"</span></p>
-          </div>
+<div id="app">
+
+  <!-- Top nav -->
+  <nav id="topnav">
+    <span class="brand"><img src="img/portfolioLogo.svg" alt="Logo" height="50"/></span>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#profil"       :class="{ active: activeSection === 'profil' }">{{ t.nav.profil }}</a>
+      <a href="#experiences"  :class="{ active: activeSection === 'experiences' }">{{ t.nav.experiences }}</a>
+      <!-- <a href="#competences"  :class="{ active: activeSection === 'competences' }">{{ t.nav.competences }}</a> -->
+      <a href="#formations"   :class="{ active: activeSection === 'formations' }">{{ t.nav.formations }}</a>
+    </div>
+    <button class="lang-btn" @click="toggleLang" :title="lang === 'fr' ? 'Switch to English' : 'Passer en français'">
+      {{ lang === 'fr' ? '🇬🇧' : '🇫🇷' }}
+    </button>
+  </nav>
+
+  <!-- Sidebar -->
+  <aside>
+    <img src="img/photo.jpg" class="sidebar-photo" alt="Photo d'Aymeric Yapi">
+    <p class="sidebar-name">Aymeric YAPI</p>
+    <p class="sidebar-tagline" v-html="t.sidebar.tagline"></p>
+    <a href="docs/CV_softwareEngineerStudent.pdf" download class="cv-btn">
+      {{ t.sidebar.cvBtn }}
+    </a>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-links">
+      <a href="mailto:aymeric.yapiodje@gmail.com" target="_blank">
+        <img src="img/gmail.png" alt="Gmail"> Gmail
+      </a>
+      <a href="tel:+33758534307" target="_blank">
+        <img src="img/phone.png" alt="Phone"> {{ t.contact.phoneLabel }}
+      </a>
+      <a href="https://github.com/Y0AZ" target="_blank">
+        <img src="img/github.png" alt="GitHub"> GitHub
+      </a>
+      <a href="https://linkedin.com/in/aymeric-yapi" target="_blank">
+        <img src="img/linkedin.png" alt="LinkedIn"> LinkedIn
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Profil -->
+    <section class="section-card" id="profil">
+      <h2 class="section-title">{{ t.sections.profil }}</h2>
+      <p class="profile-text" v-html="t.profile.text"></p>
+    </section>
+
+    <!-- Expériences -->
+    <section class="section-card" id="experiences">
+      <h2 class="section-title">{{ t.sections.experiences }}</h2>
+      <div class="intern-card">
+        <h3>{{ t.exp.stageTitle }}</h3>
+        <p>{{ t.exp.stageDesc }}</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>{{ t.exp.proj1Title }}</h3>
+          <p>{{ t.exp.proj1Desc }}</p>
         </div>
-      
-        <div data-bs-spy="scroll" data-bs-target="#navbar-info" data-bs-smooth-scroll="true" class="scrollspy bg-body-tertiary col-12 col-md-8">
-                <section id="scrollspyHeading1">
-                  <div class="d-flex justify-content-center flex-column align-items-center text-center">
-                    <h2  class="section-title">Profil</h2>
-                    <p class="profile">Bonjour 👋🏾,<br/>
-                      Je suis Aymeric YAPI, <strong>jeune diplômé d'une licence en Informatique</strong>,<br/>
-                      je poursuis sur cette année universitaire 2025-2026, mon parcours avec ma première année de mastère en développement pour acquerir <strong>une expertise dans les systèmes d'informations et dans l'intégration de logiciels.</strong><br/>
-                      Mon objectif est de joindre à cette formation, une expérience professionnelle pour faire correspondre mes aptitutes techniques à un besoin réel et contribuer pleinement aux projets de l'entreprise hôte
-                      tout en perfectionnant mon savoir-faire.<br/>
-                      Cette expérience sera pour moi, le meilleur moyen de mettre en œuvre mes aptitudes, 
-                      mais aussi, surtout, le tremplin pour lancer ma carrière professionnelle et développer mes compétences en milieu professionnel.<br/>
-                      <em>Le rythme proposé est de 2 semaines en entreprise et 1 semaine en école.</em>
-                    </p>
-                  </div>
-                </section>
-              
-                <section id="scrollspyHeading2">
-                  <div class="d-flex justify-content-center flex-column align-items-center text-center">
-                    <h2  class="section-title">Expériences</h2>
-                    <div class="container-fluid">
-                      <div class="intern relief row">
-                        <h3>[STAGE] développement PLM</h3>
-                        <p>Stage de juin à août 2025, développement en java d'admin tools sur la base de l'API Windchill et customisation du logiciel PLM, windchill.
-                        </p>
-                      </div>
-                      <br/>
-                      <div class="row">
-                        <div class="project p-1 marge relief col-md-4">
-                          <h3>[PROJET] League of stones</h3>
-                          <p>Développement de l’interface graphique d’une application web de jeu nommé League of stone, 
-                            basée sur React, doté d’un système de connexion.</p>
-                        </div>
-                        <div class="project p-2 marge relief col-md-4">
-                          <h3>[PROJET] Evolution des communes</h3>
-                          <p>
-                            réalisation du webscraping à l'aide de beautifulsoup pour créer notre base de données intégrées à sqlite,
-                            réalisation de l'Api en flask python et le front avec bootstrap.
-                          </p>
-                        </div>
-                        <div class="project p-3 relief col-md-4">
-                          <h3>[PROJET] Application de gestion d'emploi du temps</h3>
-                          <p>Réalisé utilisant Java, Spring Boot et ReactJS. Gestion des rendus avec GitLab.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              
-                <section id="scrollspyHeading3">
-                  <div class="d-flex justify-content-center flex-column align-items-center text-center">
-                    <h2  class="section-title">Compétences</h2>
-                    <div class="container">
-                      <div class="row justify-content-center">
-                        <div class="font col-md-6">
-                          <h5 class="text-center mb-3"><em>Langages/Script</em></h5>
-                          <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide"><img src="img/python.png" width="24" height="24"/>Python</div>
-                              <div class="swiper-slide"><img src="img/java.png" width="24" height="24"/>Java</div>
-                              <div class="swiper-slide"><img src="img/c:C++.png" width="24" height="24"/>C/C++</div>
-                              <div class="swiper-slide"><img src="img/php.png" width="24" height="24"/>PHP</div>
-                              <div class="swiper-slide"><img src="img/html.png" width="24" height="24"/>HTML</div>
-                              <div class="swiper-slide"><img src="img/css.png" width="24" height="24"/>CSS</div>
-                              <div class="swiper-slide"><img src="img/js.png" width="24" height="24"/>JavaScript</div>
-                              <div class="swiper-slide"><img src="img/bash.png" width="24" height="24"/>Bash</div>
-                              <div class="swiper-slide"><img src="img/r.png" width="24" height="24"/>R</div>
-                              <div class="swiper-slide"><img src="img/SQL.png" width="24" height="24"/>SQL</div>
-                            </div>
-                            <br/>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-pagination"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <br/>
-                      <div class="row justify-content-center">
-                        <div class="font col-md-6">
-                          <h5 class="text-center mb-3"><em>Framework/librairie</em></h5>
-                          <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide"><img src="img/flask.png" width="24" height="24"/>Flask</div>
-                              <div class="swiper-slide"><img src="img/springBoot.png" width="24" height="24"/>SpringBoot</div>
-                              <div class="swiper-slide"><img src="img/react.png" width="24" height="24"/>React.JS</div>
-                              <div class="swiper-slide"><img src="img/swiperJS.png" width="24" height="24"/>Swiper.JS</div>
-                              <div class="swiper-slide"><img src="img/nodeJS.png" width="24" height="24"/>Node.JS</div>
-                              <div class="swiper-slide"><img src="img/bootstrap.png" width="24" height="24"/>Bootstrap</div>
-                              <div class="swiper-slide"><img src="img/tailwind.png" width="24" height="24"/>Tailwind</div>
-                            </div>
-                            <br/>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-pagination"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <br/>
-                      <div class="row justify-content-center">
-                        <div class="font col-md-6">
-                          <h5 class="text-center mb-3"><em>IDE/Outils</em></h5>
-                          <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide"><img src="img/vsCode.png" width="24" height="24"/>VsCode</div>
-                              <div class="swiper-slide"><img src="img/intellij.png" width="24" height="24"/>Intellij</div>
-                              <div class="swiper-slide"><img src="img/eclipse.png" width="24" height="24"/>Eclipse</div>
-                              <div class="swiper-slide"><img src="img/androidStudio.png" width="24" height="24"/>AndroidStudio</div>
-                              <div class="swiper-slide"><img src="img/rStudio.png" width="24" height="24"/>RStudio</div>
-                              <div class="swiper-slide"><img src="img/github48.png" width="24" height="24"/>GitHub</div>
-                              <div class="swiper-slide"><img src="img/figma.png" width="24" height="24"/>Figma</div>
-                              <div class="swiper-slide"><img src="img/wordpress.png" width="24" height="24"/>Wordpress</div>
-                              <div class="swiper-slide"><img src="img/firebase.png" width="24" height="24"/>Firebase</div>
-                              <div class="swiper-slide"><img src="img/postman.png" width="24" height="24"/>Postman</div>
-                              <div class="swiper-slide"><img src="img/overleaf.png" width="24" height="24"/>Overleaf</div>
-                              <div class="swiper-slide"><img src="img/docker.png" width="24" height="24"/>Docker</div>
-                            </div>
-                            <br/>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-pagination"></div>
-                          </div>
-                        </div>
-                      </div>
-                      <br/>
-                      <div class="row justify-content-center">
-                        <div class="font col-md-6">
-                          <h5 class="text-center mb-3"><em>Database</em></h5>
-                          <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                              <div class="swiper-slide"><img src="img/mySQL.png" width="24" height="24"/>MySQL</div>
-                              <div class="swiper-slide"><img src="img/mariadb.png" width="24" height="24"/>MariaDB</div>
-                              <div class="swiper-slide"><img src="img/postegreSQL.png" width="24" height="24"/>PostegreSQL</div>
-                            </div>
-                            <br/>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-pagination"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-        
-              
-
-                <section id="scrollspyHeading4">
-                  <div class="d-flex justify-content-center flex-column align-items-center text-center">
-                    <h2  class="section-title">Formations</h2>
-                    <div class="education e-1 relief">
-                      <h3>Mastère Développement & Architecture des Systèmes d'Information</h3>
-                      <p><em>M1 d'expertise en développement pour l'année universitaire 2025-2026 à EPSI.</em>
-                    </div>
-                    <div class="education e-2 relief">
-                      <h3>Licence Math-Informatique [MIASHS]</h3>
-                      <p><em>Licence Informatique à l'université de Toulouse de 2021 à 2025.</em></p>
-                    </div>
-                    <div class="education e-3 relief">
-                      <h3>Bachelor gestion/finance</h3>
-                      <p><em>Bachelor en finance à l'ESG de Montpellier de 2020 à 2021.</em></p>
-                    </div>
-                  </div>
-                </section>
-
-                <section id="scrollspyHeading5">
-                  <div class="d-flex justify-content-center flex-column align-items-center text-center">
-                    <h2  class="section-title">Contact</h2>
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <p><img src="img/gmail.png" class= "clickable-img" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="aymeric.yapiodje@gmail.com"/><br/>GMAIL<a href="mailto:aymeric.yapiodje@gmail.com" target="_blank"><img src="img/icons8-link-24.png"/></a></p>
-                        </div>
-                        <div class="col-md-3">
-                          <p><img src="img/phone.png" class= "clickable-img" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="+33758534307" /><br/>PHONE<a href="tel:+33758534307" target="_blank"><img src="img/icons8-link-24.png"/></a></p>
-                        </div>
-                        <div class="col-md-3">
-                          <p><img src="img/github.png" class= "clickable-img" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="https://github.com/Y0AZ"/><br/>GITHUB<a href="https://github.com/Y0AZ" target="_blank"><img src="img/icons8-link-24.png"/></a></p>
-                        </div>
-                        <div class="col-md-3">
-                          <p><img src="img/linkedin.png" class= "clickable-img" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="https://linkedin.com/in/aymeric-yapi"/><br/>LINKEDIN<a href="https://linkedin.com/in/aymeric-yapi" target="_blank"><img src="img/icons8-link-24.png"/></a></p>
-                        </div>  
-                      </div>
-                    </div>
-                  </div>
-                </section>
+        <div class="project-card">
+          <h3>{{ t.exp.proj2Title }}</h3>
+          <p>{{ t.exp.proj2Desc }}</p>
+        </div>
+        <div class="project-card">
+          <h3>{{ t.exp.proj3Title }}</h3>
+          <p>{{ t.exp.proj3Desc }}</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <footer>
-      <p>&copy; 2025 Aymeric Yapi. Tous droits réservés.</p>
-    </footer>
-  </div>
+    <!-- Compétences -->
+    <!-- <section class="section-card" id="competences">
+      <h2 class="section-title">{{ t.sections.competences }}</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h5>{{ t.skills.cat1 }}</h5>
+          <div class="swiper mySwiper swiper-skill" v-once>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="img/python.png">Python</div>
+              <div class="swiper-slide"><img src="img/java.png">Java</div>
+              <div class="swiper-slide"><img src="img/c:C++.png">C/C++</div>
+              <div class="swiper-slide"><img src="img/php.png">PHP</div>
+              <div class="swiper-slide"><img src="img/html.png">HTML</div>
+              <div class="swiper-slide"><img src="img/css.png">CSS</div>
+              <div class="swiper-slide"><img src="img/js.png">JavaScript</div>
+              <div class="swiper-slide"><img src="img/bash.png">Bash</div>
+              <div class="swiper-slide"><img src="img/r.png">R</div>
+              <div class="swiper-slide"><img src="img/SQL.png">SQL</div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h5>{{ t.skills.cat2 }}</h5>
+          <div class="swiper mySwiper swiper-skill" v-once>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="img/flask.png">Flask</div>
+              <div class="swiper-slide"><img src="img/springBoot.png">Spring Boot</div>
+              <div class="swiper-slide"><img src="img/react.png">React.JS</div>
+              <div class="swiper-slide"><img src="img/swiperJS.png">Swiper.JS</div>
+              <div class="swiper-slide"><img src="img/nodeJS.png">Node.JS</div>
+              <div class="swiper-slide"><img src="img/bootstrap.png">Bootstrap</div>
+              <div class="swiper-slide"><img src="img/tailwind.png">Tailwind</div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h5>{{ t.skills.cat3 }}</h5>
+          <div class="swiper mySwiper swiper-skill" v-once>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="img/vsCode.png">VsCode</div>
+              <div class="swiper-slide"><img src="img/intellij.png">IntelliJ</div>
+              <div class="swiper-slide"><img src="img/eclipse.png">Eclipse</div>
+              <div class="swiper-slide"><img src="img/androidStudio.png">Android Studio</div>
+              <div class="swiper-slide"><img src="img/rStudio.png">RStudio</div>
+              <div class="swiper-slide"><img src="img/github48.png">GitHub</div>
+              <div class="swiper-slide"><img src="img/figma.png">Figma</div>
+              <div class="swiper-slide"><img src="img/wordpress.png">WordPress</div>
+              <div class="swiper-slide"><img src="img/firebase.png">Firebase</div>
+              <div class="swiper-slide"><img src="img/postman.png">Postman</div>
+              <div class="swiper-slide"><img src="img/overleaf.png">Overleaf</div>
+              <div class="swiper-slide"><img src="img/docker.png">Docker</div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h5>{{ t.skills.cat4 }}</h5>
+          <div class="swiper mySwiper swiper-skill" v-once>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="img/mySQL.png">MySQL</div>
+              <div class="swiper-slide"><img src="img/mariadb.png">MariaDB</div>
+              <div class="swiper-slide"><img src="img/postegreSQL.png">PostgreSQL</div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Formations -->
+    <section class="section-card" id="formations">
+      <h2 class="section-title">{{ t.sections.formations }}</h2>
+      <div class="edu-timeline">
+        <div class="edu-item">
+          <div class="edu-dot"></div>
+          <div class="edu-body">
+            <h3 v-html="t.edu.edu1Title"></h3>
+            <p>{{ t.edu.edu1Desc }}</p>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-dot"></div>
+          <div class="edu-body">
+            <h3 v-html="t.edu.edu2Title"></h3>
+            <p>{{ t.edu.edu2Desc }}</p>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-dot"></div>
+          <div class="edu-body">
+            <h3 v-html="t.edu.edu3Title"></h3>
+            <p>{{ t.edu.edu3Desc }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>{{ t.footer }}</footer>
+
+</div>
+
+<!-- Scripts: Vue then Swiper then app -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
