@@ -112,51 +112,8 @@ const translations = {
   }
 };
 
-// Swiper instances stored at module level so the Vue watch can call .update()
-const swiperInstances = [];
-
-function initSwipers() {
-  document.querySelectorAll('.mySwiper').forEach(el => {
-    try {
-      const slideCount = el.querySelectorAll('.swiper-slide').length;
-      const s = new Swiper(el, {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        loop: true,
-        grabCursor: true,
-        pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
-        navigation: {
-          nextEl: el.querySelector('.swiper-button-next'),
-          prevEl: el.querySelector('.swiper-button-prev'),
-        },
-        breakpoints: {
-          0:    { slidesPerView: 1 },
-          768:  { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        },
-      });
-      swiperInstances.push(s);
-    } catch (e) {
-      console.warn('Swiper init error:', e);
-    }
-  });
-}
-
 // const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
 // [...popoverTriggerList].forEach(el => new bootstrap.Popover(el));
-
-// const swiper = new Swiper('.swiper', {
-//     slidesPerView : 3,
-//     spaceBetween: 25,
-//     loop: true,
-//     pagination: {
-//       el: '.swiper-pagination',
-//     },
-//     navigation: {
-//       nextEl: '.swiper-button-next',
-//       prevEl: '.swiper-button-prev',
-//     },
-//   });
 
 createApp({
   setup() {
@@ -167,7 +124,6 @@ createApp({
 
     watch(lang, async () => {
       await nextTick();
-      swiperInstances.forEach(s => { try { s.update(); } catch (e) {} });
     });
 
     onMounted(() => {
@@ -201,6 +157,3 @@ createApp({
     return { activeSection, lang, t, toggleLang };
   }
 }).mount('#app');
-
-// Double-RAF: first frame = Vue has committed DOM, second frame = browser layout done
-requestAnimationFrame(() => requestAnimationFrame(initSwipers));
